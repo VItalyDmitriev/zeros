@@ -1,15 +1,12 @@
 module.exports = function getZerosCount(number) {
-  var res = 0;
-  for(var i=1; i<=number; i++){
-    divideonfive(i);
-  }
-
-  function divideonfive(i){
-    if(i%5==0){
-      res++;
-      divideonfive(i/5);
+  res = 0;
+  while(number > 0)
+  {
+    if(number>1){
+      number /= 5;
+      res += Math.floor(number);
     }else{
-      return;
+      break;
     }
   }
   return res;
